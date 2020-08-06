@@ -1,0 +1,101 @@
+{
+  "name": "puma-util",
+  "version": "0.0.1",
+  "description": "A common JavaScript Utility library.",
+  "author": "caesar-0925",
+  "email": "caesar-0925@qq.com",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "webpack --config ./build/webpack.config.js",
+    "lint": "eslint --fix --ext src/**/*.js"
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "browsers": [
+              "> 1%",
+              "last 2 versions",
+              "ie >= 9",
+              "Android >= 4.0",
+              "iOS >= 8"
+            ]
+          }
+        }
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "node": true
+    },
+    "extends": [
+      "plugin:prettier/recommended"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn lint",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "endOfLine": "auto",
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none"
+  },
+  "homepage": "https://github.com/Caesar-0925/puma-util#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caesar-0925/puma-util.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Caesar-0925/puma-util/issues"
+  },
+  "keywords": [
+    "javascript",
+    "utility",
+    "library"
+  ],
+  "license": "MIT"
+}
