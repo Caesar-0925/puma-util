@@ -1,7 +1,7 @@
-export const decryptStr = (str) =>
-  decodeURIComponent(unescape(window.atob(str)))
+export const encryptStr = (str) =>
+  window.btoa(unescape(encodeURIComponent(str)))
 
-export const encryptStr = (str) => window.btoa(escape(encodeURIComponent(str)))
+export const decryptStr = (str) => decodeURIComponent(escape(window.atob(str)))
 
 export const noop = () => {}
 
